@@ -1,9 +1,9 @@
 # Knižnica (PHP)
 
-Autor: [Filip Čaplák](https://github.com/fcaplak)
-
 ## Zadanie
-Úlohou bolo pripraviť jednoduchý projekt v jazyku PHP na zakladanie a vylistovanie kníh použitím databázy a JSON API na listovanie. 
+Úlohou je pripraviť jednoduchý projekt v jazyku PHP na zakladanie a vylistovanie kníh použitím databázy a JSON API na listovanie. Bude sa tu nachádzať formulár s poľami pre názov knihy, ISBN, cenu, kategóriu a autora. 
+Všetky tieto polia budú povinné a typu text, okrem ceny, ktorá bude *double* a kategórie, ktorá bude selection.
+Pole autora bude s možnosťou autocomplete a tauľka sa zoradí vzosupne po kliknutí na stĺpec *Cena*.
 
 ## Splnené požiadavky
 - PHP, Bootstrap
@@ -14,18 +14,23 @@ Autor: [Filip Čaplák](https://github.com/fcaplak)
 ## Adresárová štruktúra
 ```
 .
-+-- api
-|   +-- api_include.php
-|   +-- create_book.php
-|   +-- database_config.php
-|   +-- read_authors.php
-|   +-- read_books.php
-|   +-- read_categories.php
-+-- js
-|   +-- api.js
-|   +-- utils.js
-+-- tables.sql
-+-- index.html
++-- backend
+|   +-- src
+|   |   +-- api
+|   |   |   +-- api_include.php
+|   |   |   +-- create_book.php
+|   |   |   +-- config.php
+|   |   |   +-- read_authors.php
+|   |   |   +-- read_books.php
+|   |   |   +-- read_categories.php
+|   +-- tables.sql
++-- frontend
+|   +-- src
+|   |   +-- js
+|   |   |   +-- api.js
+|   |   |   +-- utils.js
+|   |   |   +-- tables.sql
+|   |   +-- index.html
  ```
  
 ## Riešenie
@@ -61,20 +66,11 @@ Volanie */read_authors.php?term=Rol* nám vráti:
 Tento príklad volania sa používa pri autocomplete.
 
 ### Databáza
-Použitý databázový server je MariaDB. Tabuľky sú exportované v *tables.sql*.
-
-#### Kofigurácia
-Konfigurácia prístupu do databázy sa nachádza v *database_config.php*. Príklad:
-```php
-    $servername = "localhost";
-    $username = "root";
-    $password = "1234";
-    $dbname = "library";
-```
+Použitý databázový server je MariaDB.
 
 #### Štruktúra tabuliek
 
-*knihy*
+*knihy* :
 ```
 +----------+---------+------+-----+---------+----------------+
 | Field    | Type    | Null | Key | Default | Extra          |
@@ -88,7 +84,7 @@ Konfigurácia prístupu do databázy sa nachádza v *database_config.php*. Prík
 +----------+---------+------+-----+---------+----------------+
 ```
 
-*autori*, *kategorie*
+*autori*, *kategorie* :
 ```
 +-------+---------+------+-----+---------+----------------+
 | Field | Type    | Null | Key | Default | Extra          |
@@ -98,10 +94,32 @@ Konfigurácia prístupu do databázy sa nachádza v *database_config.php*. Prík
 +-------+---------+------+-----+---------+----------------+
 ```
 
-V tabuľke *knihy* sú stĺpce *category*, *author* cudzie kľúče priradené k stĺpcu *id* a tabuľkách *autori*, *kategorie*
+V tabuľke *knihy* sú stĺpce *category*, *author* cudzie kľúče priradené k stĺpcu *id* v tabuľkách *autori*, *kategorie*
+
+### Validácia
+
+Všetky vstupy sú validované na strane servera skriptom *create_book.php*.
 
 
 
+## Inštalácia
+1. Vytvoriť tabuľky v DB (vykonať *tables.sql*)
+2. Nastaviť prístupové údaje k DB (*/backend/src/api/config.php*)
+    Príklad:
+    ```php
+    $servername = "localhost";
+    $username = "root";
+    $password = "1234";
+    $dbname = "library";
+    ```
+3. Nastaviť API URL (*/frontend/src/js/config.js*)
+    Príklad:
+    ```js
+    var api_url = http://localhost/backend/src/api/;
+    ```
 
 
+todo:
+moznosti formatov inputov - validacia 
+testy
 
