@@ -94,32 +94,28 @@ Použitý databázový server je MariaDB.
 +-------+---------+------+-----+---------+----------------+
 ```
 
-V tabuľke *knihy* sú stĺpce *category*, *author* cudzie kľúče priradené k stĺpcu *id* v tabuľkách *autori*, *kategorie*
+V tabuľke *knihy* sú stĺpce *category*, *author* cudzie kľúče priradené k stĺpcu *id* v tabuľkách *autori*, *kategorie*.
 
 ### Validácia
-
 Všetky vstupy sú validované na strane servera skriptom *create_book.php*.
+- TODO
 
-
+## Testovanie
+- TODO unit testy API
 
 ## Inštalácia
-1. Vytvoriť tabuľky v DB (vykonať *tables.sql*)
-2. Nastaviť prístupové údaje k DB (*/backend/src/api/config.php*)
+1. Vytvoriť tabuľky v DB - vykonať */backend/tables.sql*
+2. Nastaviť prístupové údaje k DB */backend/src/api/config.php*
     Príklad:
     ```php
-    $servername = "localhost";
-    $username = "root";
+    $server_name = "localhost";
+    $user_name = "root";
     $password = "1234";
-    $dbname = "library";
+    $db_name = "library";
     ```
-3. Nastaviť API URL (*/frontend/src/js/config.js*)
+3. Nastaviť API URL */frontend/src/js/config.js*
     Príklad:
     ```js
-    var api_url = http://localhost/backend/src/api/;
+    var api_url = "http://localhost/backend/src/api/";
     ```
-
-
-todo:
-moznosti formatov inputov - validacia 
-testy
 
