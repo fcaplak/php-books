@@ -1,11 +1,6 @@
 -- phpMyAdmin SQL Dump
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
---
--- Hostiteľ: 127.0.0.1
--- Čas generovania: St 10.Feb 2021, 01:08
--- Verzia serveru: 10.4.17-MariaDB
--- Verzia PHP: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -110,7 +105,8 @@ ALTER TABLE `kategorie`
 --
 ALTER TABLE `knihy`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `category` (`category`);
+  ADD KEY `category` (`category`),
+  ADD KEY `author` (`author`);
 
 --
 -- AUTO_INCREMENT pre exportované tabuľky
@@ -142,7 +138,8 @@ ALTER TABLE `knihy`
 -- Obmedzenie pre tabuľku `knihy`
 --
 ALTER TABLE `knihy`
-  ADD CONSTRAINT `knihy_ibfk_1` FOREIGN KEY (`category`) REFERENCES `kategorie` (`id`);
+  ADD CONSTRAINT `knihy_ibfk_1` FOREIGN KEY (`category`) REFERENCES `kategorie` (`id`),
+  ADD CONSTRAINT `knihy_ibfk_2` FOREIGN KEY (`author`) REFERENCES `autori` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
