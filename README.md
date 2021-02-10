@@ -12,9 +12,8 @@ Pole autora bude s možnosťou autocomplete a tauľka sa zoradí vzosupne po kli
 - Autocomplete v poli *Autor* (použité JQuery UI)
 
 ## Riešenie
-Frontend - Bootstrap, JavaScript (JQuery, Ajax)
-
-Backend - PHP (vanilla)
+- Frontend - Bootstrap, JavaScript (JQuery, Ajax)
+- Backend - PHP (vanilla)
 
 ### Adresárová štruktúra
 
