@@ -1,4 +1,4 @@
-# Knižnica (PHP)
+# Knižnica
 
 ## Zadanie
 Úlohou je pripraviť jednoduchý projekt v jazyku PHP na zakladanie a vylistovanie kníh použitím databázy a JSON API na listovanie. Bude sa tu nachádzať formulár s poľami pre názov knihy, ISBN, cenu, kategóriu a autora. 
@@ -23,18 +23,18 @@ Pole autora bude s možnosťou autocomplete a tauľka sa zoradí vzosupne po kli
 |   |   |   +-- read_authors.php
 |   |   |   +-- read_books.php
 |   |   |   +-- read_categories.php
-|   +-- tables.sql
+|   +-- library.sql
 +-- frontend
 |   +-- src
 |   |   +-- js
 |   |   |   +-- api.js
 |   |   |   +-- utils.js
-|   |   |   +-- tables.sql
 |   |   +-- index.html
  ```
  
 ## Riešenie
-Na vypracovanie backendovej časti som použil čistý PHP (vanilla) a na frontendovú časť mi poslúžil Bootstrap a JavaScript (JQuery, Ajax).
+Frontend - Bootstrap, JavaScript (JQuery, Ajax)
+Backend - PHP (vanilla)
 
 ### API
 Požiadavky a odpovede API sú vo formáte JSON. 
@@ -49,18 +49,18 @@ Spracovávajú ich skripty:
 
 Máme dostupných autorov:
 ```
-{
+[
     "Peter Prvý",
     "Filip The Second",
     "J. J. Roland"
-}
+]
 ```
 
 Volanie */read_authors.php?term=Rol* nám vráti:
 ```
-{
+[
     "Roland"
-}
+]
 ```
 
 Tento príklad volania sa používa pri autocomplete.
@@ -104,17 +104,15 @@ Všetky vstupy sú validované na strane servera skriptom *create_book.php*.
 - TODO unit testy API
 
 ## Inštalácia
-1. Vytvoriť tabuľky v DB - vykonať */backend/tables.sql*
-2. Nastaviť prístupové údaje k DB */backend/src/api/config.php*
-    Príklad:
+1. Vytvoriť tabuľky v DB - vykonať */backend/library*
+2. Nastaviť prístupové údaje k DB */backend/src/api/config.php*, príklad:
     ```php
     $server_name = "localhost";
     $user_name = "root";
     $password = "1234";
     $db_name = "library";
     ```
-3. Nastaviť API URL */frontend/src/js/config.js*
-    Príklad:
+3. Nastaviť API URL */frontend/src/js/config.js*, príklad:
     ```js
     var api_url = "http://localhost/backend/src/api/";
     ```
