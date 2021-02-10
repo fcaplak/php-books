@@ -98,8 +98,6 @@ V tabuľke *knihy* sú stĺpce *category*, *author* cudzie kľúče priradené k
 Všetky vstupy sú validované na strane servera skriptom *create_book.php*.
 - TODO
 
-## Testovanie
-- TODO unit testy API
 
 ## Inštalácia
 1. Vytvoriť tabuľky v DB - vykonať */backend/library.sql*
