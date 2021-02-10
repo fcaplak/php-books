@@ -15,7 +15,7 @@
   <script src="js/api.js"></script>
   <script src="js/utils.js"></script>
 
-  <div class="container p-1 pt-5">
+  <div class="container p-5">
     <div class="text-center"><h1>Knižnica</h1></div>
     <div id="success_box" class="alert alert-success" role="alert" style="display:none"></div>
     <form>
@@ -27,23 +27,23 @@
       </div>
 
       <div class="row form-group pt-2">
-          <div class="col"><input name="isbn" type="text" class="form-control" placeholder="ISBN"><div id="isbn-invalid" class="invalid-feedback"></div></div>
-          <div class="col"><input name="price" type="text" class="form-control" placeholder="Cena"><div id="price-invalid" class="invalid-feedback"></div></div>
+          <div class="col mr-5"><input name="isbn" type="text" class="form-control" placeholder="ISBN"><div id="isbn-invalid" class="invalid-feedback"></div></div>
+          <div class="col ml-5"><input name="price" type="text" class="form-control" placeholder="Cena"><div id="price-invalid" class="invalid-feedback"></div></div>
       </div>
 
       <div class="row form-group pt-2">
-          <div class="col">
+          <div class="col mr-5">
             <select name="category" class="custom-select form-control" id="category">
               <option name="" value="" selected disabled>Kategória</option>
             </select>
             <div id="category-invalid" class="invalid-feedback"></div>
           </div>
-          <div class="col"><input id="author" name="author" type="text" class="form-control" placeholder="Autor"><div id="author-invalid" class="invalid-feedback"></div></div>
+          <div class="col ml-5"><input id="author" name="author" type="text" class="form-control" placeholder="Autor"><div id="author-invalid" class="invalid-feedback"></div></div>
       </div>
 
       <div class="row form-group pt-2 pb-2">
-        <div class="col"></div>
-        <div class="col"><button class="btn btn-primary btn-block" type="submit">Pridať knihu do knižnice</button></div>
+        <div class="col mr-5"></div>
+        <div class="col ml-5"><button class="btn btn-primary btn-block" type="submit">Pridať knihu do knižnice</button></div>
       </div>
     </form>
     
