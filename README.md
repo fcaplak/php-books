@@ -11,7 +11,13 @@ Pole autora bude s možnosťou autocomplete a tauľka sa zoradí vzosupne po kli
 - Sortovanie výsledkov podľa ceny vzostupne kliknutím na stĺpec *Cena*
 - Autocomplete v poli *Autor* (použité JQuery UI)
 
-## Adresárová štruktúra
+## Riešenie
+Frontend - Bootstrap, JavaScript (JQuery, Ajax)
+
+Backend - PHP (vanilla)
+
+### Adresárová štruktúra
+
 ```
 .
 +-- backend
@@ -31,10 +37,6 @@ Pole autora bude s možnosťou autocomplete a tauľka sa zoradí vzosupne po kli
 |   |   |   +-- utils.js
 |   |   +-- index.html
  ```
- 
-## Riešenie
-Frontend - Bootstrap, JavaScript (JQuery, Ajax)
-Backend - PHP (vanilla)
 
 ### API
 Požiadavky a odpovede API sú vo formáte JSON. 
