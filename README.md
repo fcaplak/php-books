@@ -78,7 +78,7 @@ Použitý databázový server je MariaDB.
 | isbn     | text    | NO   |     | NULL    |                |
 | price    | double  | NO   |     | NULL    |                |
 | category | int(11) | NO   | MUL | NULL    |                |
-| author   | int(11) | NO   |     | NULL    |                |
+| author   | int(11) | NO   | MUL | NULL    |                |
 +----------+---------+------+-----+---------+----------------+
 ```
 
