@@ -106,7 +106,7 @@ Všetky vstupy sú validované na strane servera skriptom *create_book.php*.
 - TODO unit testy API
 
 ## Inštalácia
-1. Vytvoriť tabuľky v DB - vykonať */backend/library*
+1. Vytvoriť tabuľky v DB - vykonať */backend/library.sql*
 2. Nastaviť prístupové údaje k DB */backend/src/api/config.php*, príklad:
     ```php
     $server_name = "localhost";
