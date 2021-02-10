@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <title>Library</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/utils.js"></script>
+
+<div class="container p-5">
+    <div class="text-center"><h1>Knižnica</h1></div>
+    <div id="success_box" class="alert alert-success" role="alert" style="display:none"></div>
+    <form>
+      <div class="row form-group pt-4">
+        <div class="col"><input name="name" type="text" class="form-control" placeholder="Názov knihy">
+          <div id="name-invalid" class="invalid-feedback"></div>
+        </div>
+
+      </div>
+
+      <div class="row form-group pt-2">
+          <div class="col"><input name="isbn" type="text" class="form-control" placeholder="ISBN"><div id="isbn-invalid" class="invalid-feedback"></div></div>
+          <div class="col"><input name="price" type="text" class="form-control" placeholder="Cena"><div id="price-invalid" class="invalid-feedback"></div></div>
+      </div>
+
+      <div class="row form-group pt-2">
+          <div class="col">
+            <select name="category" class="custom-select form-control" id="category">
+              <option name="" value="" selected disabled>Kategória</option>
+            </select>
+            <div id="category-invalid" class="invalid-feedback"></div>
+          </div>
+          <div class="col"><input id="author" name="author" type="text" class="form-control" placeholder="Autor"><div id="author-invalid" class="invalid-feedback"></div></div>
+      </div>
+
+      <div class="row form-group pt-2 pb-2">
+        <div class="col"></div>
+        <div class="col"><button class="btn btn-primary btn-block" type="submit">Pridať knihu do knižnice</button></div>
+      </div>
+    </form>
+    
+    <hr class="pb-2">
+
+    <table class="table table-hover table-bordered" id="books">
+        <thead>
+          <tr>
+            <th style="width: 20%" scope="col">Názov knihy</th>
+            <th style="width: 25%" scope="col">ISBN</th>
+            <th style="width: 20%" scope="col" id="sort">Cena</th>
+            <th style="width: 15%" scope="col">Kategória</th>
+            <th style="width: 20%" scope="col">Autor</th>
+          </tr>
+        </thead>
+        <tbody id="tablebody">
+          
+        </tbody>
+      </table>
+</div>
+</body>
+</html>
