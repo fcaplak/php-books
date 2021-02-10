@@ -57,7 +57,7 @@ Máme dostupných autorov:
 Volanie */read_authors.php?term=Rol* nám vráti:
 ```
 [
-    "Roland"
+    "J. J. Roland"
 ]
 ```
 
