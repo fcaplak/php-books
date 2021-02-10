@@ -110,6 +110,6 @@ Všetky vstupy sú validované na strane servera skriptom *create_book.php*.
     ```
 3. Nastaviť API URL */frontend/src/js/config.js*, príklad:
     ```js
-    var api_url = "http://localhost/backend/src/api/";
+    var api_url = "http://localhost/backend/src/api";
     ```
 
