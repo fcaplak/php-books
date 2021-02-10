@@ -13,17 +13,30 @@
     {
         $book = json_decode(file_get_contents("php://input"));
 
-        if (empty($book->name)) { $error_flag = "1"; $response['invalid']['name'] = "Názov knihy je potrebné vyplniť"; }
+        // inputs without whitespaces should have at least 1 character
+        $name_no_ws = preg_replace('/\s+/', '', $book->name);
+        $author_no_ws = preg_replace('/\s+/', '', $book->author);
+
+        if (strlen($name_no_ws) < 2)
+        {
+            $error_flag = "1";
+            $response['invalid']['name'] = "Názov knihy je potrebné vyplniť";
+        }
 
         // validate ISBN - 10 or 13 digits
         if ( !preg_match("/^([0-9]{10}|[0-9]{13})$/", $book->isbn ))
         {
-            $error_flag = "1"; $response['invalid']['isbn'] = "ISBN je v nesprávnom formáte";
+            $error_flag = "1";
+            $response['invalid']['isbn'] = "ISBN musí mať 10 alebo 13 čísiel, bez pomlčiek";
         }
 
         if (empty($book->price) || !is_numeric($book->price) || $book->price < 0 ) { $error_flag = "1"; $response['invalid']['price'] = "Cena musí byť kladné desatinné číslo"; }
         if (empty($book->category)) { $error_flag = "1"; $response['invalid']['category'] = "Je potrebné vybrať kategóriu"; }
-        if (empty($book->author)) { $error_flag = "1"; $response['invalid']['author'] = "Je potrebné vyplniť autora";}
+        
+        if (strlen($author_no_ws) < 2)
+        {
+            $error_flag = "1"; $response['invalid']['author'] = "Je potrebné vyplniť autora";
+        }
 
         if( $error_flag == "0")
         {
