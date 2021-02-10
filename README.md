@@ -1,13 +1,10 @@
 # Knižnica
 
-## Zadanie
-Úlohou je pripraviť jednoduchý projekt v jazyku PHP na zakladanie a vylistovanie kníh použitím databázy a JSON API na listovanie. Bude sa tu nachádzať formulár s poľami pre názov knihy, ISBN, cenu, kategóriu a autora. 
-Všetky tieto polia budú povinné a typu text, okrem ceny, ktorá bude *double* a kategórie, ktorá bude selection.
-Pole autora bude s možnosťou autocomplete a tauľka sa zoradí vzosupne po kliknutí na stĺpec *Cena*.
+Projekt v jazyku PHP na zakladanie a vylistovanie kníh použitím databázy a JSON API.
 
 ## Splnené požiadavky
 - PHP, Bootstrap
-- Povinné polia, ich validácia na strane servera
+- Validácia polí na strane servera
 - Sortovanie výsledkov podľa ceny vzostupne kliknutím na stĺpec *Cena*
 - Autocomplete v poli *Autor* (použité JQuery UI)
 
