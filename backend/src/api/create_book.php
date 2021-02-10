@@ -1,44 +1,53 @@
 <?php
     require_once('api_include.php');
 
-    $error_flag = "0";
+    $error_flag = 0;
     $message = "";
 
     $response = array();
     $response['error'] = $error_flag;
     $response['invalid'] = array();
 
-    
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $book = json_decode(file_get_contents("php://input"));
 
-        // inputs without whitespaces should have at least 1 character
+        // name and author without whitespaces
         $name_no_ws = preg_replace('/\s+/', '', $book->name);
         $author_no_ws = preg_replace('/\s+/', '', $book->author);
 
         if (strlen($name_no_ws) < 2)
         {
-            $error_flag = "1";
+            $error_flag = 1;
             $response['invalid']['name'] = "Názov knihy je potrebné vyplniť";
         }
 
-        // validate ISBN - 10 or 13 digits
+        // 10 or 13 digits
         if ( !preg_match("/^([0-9]{10}|[0-9]{13})$/", $book->isbn ))
         {
-            $error_flag = "1";
+            $error_flag = 1;
             $response['invalid']['isbn'] = "ISBN musí mať 10 alebo 13 čísiel, bez pomlčiek";
         }
 
-        if (empty($book->price) || !is_numeric($book->price) || $book->price < 0 ) { $error_flag = "1"; $response['invalid']['price'] = "Cena musí byť kladné desatinné číslo"; }
-        if (empty($book->category)) { $error_flag = "1"; $response['invalid']['category'] = "Je potrebné vybrať kategóriu"; }
-        
-        if (strlen($author_no_ws) < 2)
+        if (empty($book->price) || !is_numeric($book->price) || $book->price < 0 )
         {
-            $error_flag = "1"; $response['invalid']['author'] = "Je potrebné vyplniť autora";
+            $error_flag = 1;
+            $response['invalid']['price'] = "Cena musí byť kladné desatinné číslo";
         }
 
-        if( $error_flag == "0")
+        if (empty($book->category))
+        {
+            $error_flag = 1;
+            $response['invalid']['category'] = "Je potrebné vybrať kategóriu";
+        }
+
+        if (strlen($author_no_ws) < 2)
+        {
+            $error_flag = 1;
+            $response['invalid']['author'] = "Je potrebné vyplniť autora";
+        }
+
+        if( $error_flag == 0)
         {
             $stmt = $conn->prepare("SELECT `id` FROM `autori` WHERE `name` = ?");
             $stmt->bind_param("s", $book->author);
