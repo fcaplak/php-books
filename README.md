@@ -4,7 +4,7 @@ Projekt v jazyku PHP na zakladanie a vylistovanie kníh použitím databázy a J
 
 ## Splnené požiadavky
 - PHP, Bootstrap
-- Povinné polia, ich validácia na strane servera
+- Validácia polí na strane servera
 - Sortovanie výsledkov podľa ceny vzostupne kliknutím na stĺpec *Cena*
 - Autocomplete v poli *Autor* (použité JQuery UI)
 
