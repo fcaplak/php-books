@@ -99,6 +99,7 @@ Všetky vstupy sú validované na strane servera skriptom *create_book.php*.
 
 - Názov knihy - musí obsahovať aspoň 1 neprázdny znak
 - ISBN - musí obsahovať 10 alebo 13 číslic, bez pomlčiek
+- Cena - musí byť kladné celé alebo desatinné číslo
 - Kategória - validuje sa, či užívateľ vybral kategóriu
 - Autor - musí obsahovať aspoň 2 neprázdne znaky
 
