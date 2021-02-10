@@ -6,7 +6,7 @@ function draw_table(json_data){
 
   for (var i=0, l=data.length; i<l; i++) {
     var obj = data[i];
-    content += '<tr><td style="width: 20%">'+obj.name+'</td><td style="width: 25%">'+obj.isbn+'</td><td style="width: 20%">'+obj.price+' &euro;</td><td style="width: 15%">'+obj.category+'</td><td style="width: 20%">'+obj.author+'</td></tr>'
+    content += '<tr><td style="width: 30%">'+obj.name+'</td><td style="width: 20%">'+obj.isbn+'</td><td style="width: 10%">'+obj.price+' &euro;</td><td style="width: 15%">'+obj.category+'</td><td style="width: 25%">'+obj.author+'</td></tr>'
   }
   $('#tablebody').html('');
   $('#tablebody').html(content);
