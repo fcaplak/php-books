@@ -4,5 +4,5 @@
 	header("Access-Control-Allow-Methods: GET, POST");  
 	header('Content-Type: application/json');
     
-    require_once('config.php');
+	require_once('config.php');
 ?>
