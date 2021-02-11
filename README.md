@@ -2,8 +2,7 @@
 
 Projekt v jazyku PHP na zakladanie a vylistovanie kníh použitím databázy a JSON API.
 
-## Live preview
-http://173.249.51.180/php-books/
+Live preview - http://173.249.51.180/php-books/
 
 ## Splnené požiadavky
 - PHP, Bootstrap
