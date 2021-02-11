@@ -16,7 +16,7 @@
         $name_no_ws = preg_replace('/\s+/', '', $book->name);
         $author_no_ws = preg_replace('/\s+/', '', $book->author);
 
-        if (strlen($name_no_ws) < 2)
+        if (strlen($name_no_ws) < 1)
         {
             $error_flag = 1;
             $response['invalid']['name'] = "Názov knihy je potrebné vyplniť";
