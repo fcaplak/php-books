@@ -119,4 +119,3 @@ Všetky vstupy sú validované na strane servera skriptom *create_book.php*.
     ```js
     var api_url = "http://localhost/backend/src/api";
     ```
-
